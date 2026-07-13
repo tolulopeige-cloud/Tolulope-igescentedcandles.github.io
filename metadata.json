@@ -1,0 +1,6 @@
+{
+  "name": "Scented Candle Boutique & Creator",
+  "description": "An elegant landing page and custom scented candle designer for a luxury candle brand based in Gbagada, Lagos. Create your own bespoke candle and order instantly via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
