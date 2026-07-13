@@ -1,0 +1,4 @@
+git checkout main
+git pull origin main
+git merge setup/github-pages
+git push origin main
