@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, Flame, Droplet } from 'lucide-react';
+import { ArrowRight, Compass, Heart, Wind } from 'lucide-react';
 
 interface HeroProps {
   onStartCreating: () => void;
@@ -9,158 +9,139 @@ interface HeroProps {
 
 export default function Hero({ onStartCreating, onBrowseCollection }: HeroProps) {
   return (
-    <div className="relative min-h-[92vh] flex items-center justify-center bg-[#120905] text-[#fcfaf6] overflow-hidden py-16 md:py-24" id="hero-section">
-      {/* Background elegant lighting overlay */}
-      <div className="absolute inset-0 bg-radial-[circle_at_50%_120%] from-[#23150d]/60 via-[#120905] to-[#0c0503]" />
+    <div className="relative min-h-[90vh] flex items-center justify-center bg-[#120905] text-[#fcfaf6] overflow-hidden py-20 md:py-28 border-b border-[#c5a880]/10" id="hero-section">
+      {/* Soft natural ambient lighting mimicking distant candlelight */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#281810,rgba(18,9,5,0.95),#0c0503)]" />
 
-      {/* Floating sand-gold glow fields */}
-      <div className="absolute top-1/4 left-1/10 w-[450px] h-[450px] bg-[#c5a880]/5 rounded-full filter blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/10 w-[450px] h-[450px] bg-[#c5a880]/4 rounded-full filter blur-[120px] animate-pulse delay-2000" />
+      {/* Very subtle organic heat glow */}
+      <div className="absolute top-1/3 left-1/12 w-[500px] h-[500px] bg-[#c5a880]/3 rounded-full filter blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/12 w-[400px] h-[400px] bg-[#c5a880]/3 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center z-10 w-full">
         {/* Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-8 text-left">
+          
+          {/* Humble Workshop Badge */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30 text-[#c5a880] text-[11px] font-mono uppercase tracking-[0.2em]"
+            className="inline-flex items-center gap-2.5 text-[10px] font-mono tracking-[0.3em] uppercase text-[#c5a880] border-b border-[#c5a880]/20 pb-1.5"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Handpoured in Gbagada, Lagos</span>
+            <Compass className="w-3.5 h-3.5 stroke-[1.5px] animate-spin-slow" />
+            <span>GBAGADA STUDIOS • LAGOS, NIGERIA</span>
           </motion.div>
 
-          <div className="space-y-4">
+          {/* Premium Editorial Typography */}
+          <div className="space-y-5">
             <motion.h1 
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-[#fcfaf6] leading-[1.1] tracking-tight font-light"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-[#fcfaf6] leading-[1.15] tracking-tight font-light"
             >
-              Wrap Your Space in <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fefdfa] via-[#e2cbb1] to-[#c5a880] font-normal italic pr-2">
-                Warm Luxury &amp; Glow
+              Slow-burning warmth, <br />
+              <span className="font-normal italic text-[#e2cbb1] font-serif">
+                poured by hand.
               </span>
             </motion.h1>
 
             <motion.p 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[#e8e4dc]/85 text-base sm:text-lg max-w-xl font-sans font-light leading-relaxed"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[#e8e4dc]/80 text-sm sm:text-base md:text-lg max-w-xl font-sans font-light leading-relaxed"
             >
-              Experience the soothing crackle and beautiful warmth of premium, hand-poured candles. Made cleanly using 100% organic soy and coconut wax, infused with rich, slow-releasing Lagos-inspired aromas designed for absolute relaxation.
+              Artisanal scented candles crafted in small, thoughtful batches. Grounded in Lagos, we blend pure soy and coconut wax with therapeutic-grade botanical oils to invite calm, soot-free, and slow-releasing fragrance into your physical spaces.
             </motion.p>
           </div>
 
-          {/* Core Brand Features */}
+          {/* Minimalist Organic Features */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="grid grid-cols-2 gap-6 w-full max-w-md pt-2 border-t border-[#fcfaf6]/10"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid grid-cols-2 gap-8 w-full max-w-lg pt-6 border-t border-[#fcfaf6]/10"
           >
-            <div className="flex items-center gap-3.5">
-              <div className="p-2.5 rounded-lg bg-[#1c110a] border border-[#c5a880]/20 text-[#c5a880]">
-                <Flame className="w-5 h-5" />
+            <div className="flex items-start gap-3">
+              <div className="p-1 text-[#c5a880]">
+                <Heart className="w-4.5 h-4.5 stroke-[1.5px]" />
               </div>
               <div className="text-left">
-                <p className="text-[10px] text-[#c5a880] font-mono tracking-widest uppercase">SOOT-FREE</p>
-                <p className="text-sm font-medium text-[#fcfaf6]">100% Organic Wax</p>
+                <h4 className="text-[11px] text-[#fcfaf6] font-mono tracking-widest uppercase font-semibold">100% CLEAN WAX</h4>
+                <p className="text-xs text-stone-400 mt-1 leading-relaxed font-light">Natural soy &amp; coconut blend. Zero paraffin, toxins, or heavy soot.</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5">
-              <div className="p-2.5 rounded-lg bg-[#1c110a] border border-[#c5a880]/20 text-[#c5a880]">
-                <Droplet className="w-5 h-5" />
+            <div className="flex items-start gap-3">
+              <div className="p-1 text-[#c5a880]">
+                <Wind className="w-4.5 h-4.5 stroke-[1.5px]" />
               </div>
               <div className="text-left">
-                <p className="text-[10px] text-[#c5a880] font-mono tracking-widest uppercase">SENSORY DRAFT</p>
-                <p className="text-sm font-medium text-[#fcfaf6]">Therapeutic Oils</p>
+                <h4 className="text-[11px] text-[#fcfaf6] font-mono tracking-widest uppercase font-semibold">THERAPEUTIC SCENTS</h4>
+                <p className="text-xs text-stone-400 mt-1 leading-relaxed font-light">Rich botanical aroma formulation curated for sensory restoration.</p>
               </div>
             </div>
           </motion.div>
 
+          {/* Premium Call to Actions */}
           <motion.div 
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto"
           >
             <button
               onClick={onStartCreating}
-              className="px-8 py-4 bg-[#c5a880] hover:bg-[#b0936b] text-[#120905] font-semibold rounded-lg shadow-xl shadow-[#120905]/40 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-xs font-mono uppercase tracking-widest"
+              className="px-8 py-4 bg-[#c5a880] hover:bg-[#b0936b] text-[#120905] font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2.5 text-xs font-mono uppercase tracking-widest cursor-pointer"
               id="hero-create-btn"
             >
-              <span>Design Bespoke Candle</span>
-              <Sparkles className="w-4 h-4" />
+              <span>Design Custom Recipe</span>
+              <ArrowRight className="w-4 h-4 stroke-[2px]" />
             </button>
 
             <button
               onClick={onBrowseCollection}
-              className="px-8 py-4 bg-[#1c110a]/40 hover:bg-[#1c110a] border border-[#c5a880]/30 hover:border-[#c5a880]/60 text-[#fcfaf6] font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 text-xs font-mono uppercase tracking-widest"
+              className="px-8 py-4 bg-[#1c110a]/60 hover:bg-[#1c110a] border border-[#c5a880]/30 hover:border-[#c5a880]/60 text-[#fcfaf6] font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 text-xs font-mono uppercase tracking-widest cursor-pointer"
               id="hero-browse-btn"
             >
-              <span>Browse Collection</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Explore Collection</span>
             </button>
           </motion.div>
         </div>
 
-        {/* Feature Aesthetic Card / Image Side */}
+        {/* Museum-Framed Real Portrait Image Area */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="lg:col-span-5 relative flex items-center justify-center"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 flex flex-col items-center justify-center"
         >
-          <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-square rounded-2xl overflow-hidden border border-[#c5a880]/20 shadow-2xl bg-[#0c0503] p-1 group">
-            {/* Ambient gold ring */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#c5a880]/15 via-transparent to-[#c5a880]/25 opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
-            
-            {/* Featured Image */}
-            <img 
-              src="/src/assets/images/amber_candle_lumina_1783901509982.jpg" 
-              alt="Premium Scented Candle" 
-              className="w-full h-full object-cover rounded-xl transition-all duration-1000 transform group-hover:scale-103"
-              referrerPolicy="no-referrer"
-            />
-
-            {/* Luxury Product Label Overlay */}
-            <div className="absolute inset-x-0 bottom-[32%] flex justify-center z-10 pointer-events-none">
-              <div className="w-[140px] bg-[#fbfaf5] text-stone-900 border border-stone-300 shadow-xl p-3.5 rounded-xs flex flex-col items-center justify-center text-center">
-                <span className="text-[8px] tracking-[0.25em] font-sans font-bold text-stone-500 uppercase block mb-0.5">
-                  L U M I N A
-                </span>
-                <div className="w-8 h-[1px] bg-stone-300 mb-1" />
-                <h4 className="font-serif font-semibold text-[10px] text-stone-900 uppercase tracking-wide leading-tight px-1">
-                  Eko Sunset
-                </h4>
-                <div className="h-[1px] w-4 bg-[#c5a880]/40 my-0.5" />
-                <span className="text-[5.5px] text-stone-400 font-mono tracking-widest uppercase block">
-                  Handpoured in Lagos
-                </span>
-                <span className="text-[5px] text-stone-500 font-mono tracking-wider block mt-0.5">
-                  8oz Soy Blend
-                </span>
-              </div>
+          {/* Portrait Gallery Frame */}
+          <div className="w-full max-w-[350px] sm:max-w-[390px] flex flex-col items-stretch" id="hero-portrait-frame">
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden border border-[#c5a880]/15 bg-[#170e0a] p-[6px] shadow-2xl group">
+              {/* Natural subtle warm tone overlay */}
+              <div className="absolute inset-0 bg-[#c5a880]/3 mix-blend-color-burn z-10 pointer-events-none" />
+              
+              {/* Beautiful local candle image */}
+              <img 
+                src="/src/assets/images/amber_candle_lumina_1783901509982.jpg" 
+                alt="Lumina Lagos handcrafted candle vessel" 
+                className="w-full h-full object-cover rounded-md grayscale-[10%] contrast-[105%] brightness-[92%] transition-transform duration-1000 group-hover:scale-102"
+                referrerPolicy="no-referrer"
+              />
             </div>
 
-            {/* Glowing flame graphic overlay */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[22%] w-10 h-10 flex items-center justify-center">
-              <div className="absolute w-4 h-8 bg-gradient-to-t from-orange-600 via-amber-400 to-[#c5a880] rounded-full blur-xs opacity-90 animate-pulse" />
-              <div className="absolute w-6 h-6 bg-[#c5a880]/20 rounded-full blur-md animate-ping" />
-            </div>
-
-            {/* Floating banner label */}
-            <div className="absolute bottom-4 left-4 right-4 bg-[#0c0503]/90 backdrop-blur-md border border-[#c5a880]/20 rounded-xl p-4 flex items-center justify-between">
+            {/* Gallery Spec Card / Caption underneath instead of overlapping the photo */}
+            <div className="mt-4 px-4 py-3 bg-[#1c110a]/40 border border-[#c5a880]/10 rounded-lg flex items-center justify-between text-left">
               <div>
-                <p className="text-[10px] text-[#c5a880] font-mono font-medium tracking-widest uppercase">PREMIUM PICKS</p>
-                <h4 className="text-base font-serif font-medium text-[#fcfaf6]">The Signature Eko Sunset</h4>
+                <span className="text-[9px] text-[#c5a880] font-mono tracking-[0.2em] uppercase block">FEATURED VESSEL</span>
+                <h4 className="text-sm font-serif font-light text-[#fcfaf6] mt-0.5">The Signature Eko Sunset</h4>
+                <p className="text-[10px] text-stone-400 mt-0.5 font-light font-sans">Warm amber glass, hand-stamped label</p>
               </div>
-              <div className="text-right">
-                <span className="text-xs text-stone-400 block line-through">₦13,000</span>
-                <span className="text-sm font-semibold text-[#c5a880]">₦11,000</span>
+              <div className="text-right border-l border-[#c5a880]/10 pl-4 shrink-0">
+                <span className="text-[10px] text-stone-500 block line-through">₦13,000</span>
+                <span className="text-xs font-mono font-medium text-[#c5a880]">₦11,000</span>
               </div>
             </div>
           </div>
